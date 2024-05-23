@@ -1,0 +1,72 @@
+{
+  "nom_langue": "Polski",
+  "delegue_master": "Délégué Master",
+  "eleves": "Studenci",
+  "eleve": "Student",
+  "conseils": "Rady Klasowe",
+
+  "fichier": "Plik",
+  "nouveau": "Nowy",
+  "ouvrir": "Otwórz",
+  "enregistrer": "Zapisz",
+  "enregistrer_sous": "Zapisz jako",
+  "importer": "Importuj",
+  "importer_texte": "Importuj z Tekstu",
+  "importer_csv": "Importuj z CSV",
+  "importer_txt": "Importuj z TXT",
+  "exporter": "Eksportuj",
+  "exporter_pdf": "Eksportuj do PDF",
+  "exporter_csv": "Eksportuj do CSV",
+  "exporter_txt": "Eksportuj do TXT",
+  "parametres": "Ustawienia",
+  "quitter": "Wyjdź",
+
+  "edition": "Edycja",
+
+  "ajouter_eleve": "Dodaj Studenta",
+  "supprimer_eleve": "Usuń Studenta",
+
+  "nom": "Nazwisko",
+  "prenom": "Imię",
+
+  "rechercher": "Szukaj...",
+  "ok": "OK",
+
+  "semestre_1": "1. Semestr",
+  "semestre_2": "2. Semestr",
+
+  "remarque": "Uwaga",
+  "moyenne": "Średnia",
+  "appreciation": "Ocena",
+  "mention": "Wzmianka",
+
+  "generale": "Ogólne",
+  "note_max": "Maksymalna Ocena",
+  "nettoyer_cache": "Wyczyść Pamięć Cache",
+  "nettoyer_cache_bouton": "Wyczyść",
+  "langues": "Języki",
+  "themes": "Motywy",
+
+  "sombre": "Ciemny",
+
+  "importer_texte_titre": "Importuj z Tekstu",
+  "importer_texte_bouton": "Importuj Tekst",
+
+  "confirmer": "Potwierdź",
+  "message_confirmation_suppression": "Czy na pewno chcesz usunąć bieżące dane i otworzyć nowy projekt?",
+
+  "succes": "Sukces",
+  "donnes_importees": "Dane zostały pomyślnie otwarte z: ",
+  "donnes_exportees": "Dane zostały wyeksportowane do: ",
+  "erreur": "Błąd",
+  "message_erreur": "Wystąpił błąd: ",
+
+  "message_pdf": "Plik PDF został pomyślnie wyeksportowany: ",
+
+  "appreciations": ["Brak oceny", "Niepokojący bilans", "Ostrzeżenie dotyczące pracy", "Ostrzeżenie dotyczące zachowania", "Pochwały", "Komplementy", "Gratulacje", "Doskonałość"],
+
+  "avertissement": "Ostrzeżenie",
+  "aucun_semestre_selectionne": "Nie wybrano semestru, prosze wybierz przynajmniej jeden semestr.",
+  "choisir_semestre": "Wybierz semestr",
+  "selectionner_semestre_exporter": "Wybierz semestr do eksportowania"
+}

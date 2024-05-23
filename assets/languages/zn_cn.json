@@ -1,0 +1,72 @@
+{
+  "nom_langue": "中文",
+  "delegue_master": "Délégué Master",
+  "eleves": "学生",
+  "eleve": "学生",
+  "conseils": "班级建议",
+
+  "fichier": "文件",
+  "nouveau": "新建",
+  "ouvrir": "打开",
+  "enregistrer": "保存",
+  "enregistrer_sous": "另存为",
+  "importer": "导入",
+  "importer_texte": "从文本导入",
+  "importer_csv": "从CSV导入",
+  "importer_txt": "从TXT导入",
+  "exporter": "导出",
+  "exporter_pdf": "导出为PDF",
+  "exporter_csv": "导出为CSV",
+  "exporter_txt": "导出为TXT",
+  "parametres": "设置",
+  "quitter": "退出",
+
+  "edition": "编辑",
+
+  "ajouter_eleve": "添加学生",
+  "supprimer_eleve": "删除学生",
+
+  "nom": "姓",
+  "prenom": "名",
+
+  "rechercher": "搜索...",
+  "ok": "确定",
+
+  "semestre_1": "第一学期",
+  "semestre_2": "第二学期",
+
+  "remarque": "备注",
+  "moyenne": "平均分",
+  "appreciation": "评价",
+  "mention": "提及",
+
+  "generale": "总体",
+  "note_max": "最高分",
+  "nettoyer_cache": "清除缓存",
+  "nettoyer_cache_bouton": "清除",
+  "langues": "语言",
+  "themes": "主题",
+
+  "sombre": "暗",
+
+  "importer_texte_titre": "从文本导入",
+  "importer_texte_bouton": "导入文本",
+
+  "confirmer": "确认",
+  "message_confirmation_suppression": "确定删除当前数据并打开新项目吗？",
+
+  "succes": "成功",
+  "donnes_importees": "成功从以下位置打开数据：",
+  "donnes_exportees": "数据成功导出到：",
+  "erreur": "错误",
+  "message_erreur": "发生错误：",
+
+  "message_pdf": "PDF文件成功导出：",
+
+  "appreciations": ["无评价", "令人担忧的平衡", "工作警告", "行为警告", "鼓励", "赞美", "祝贺", "卓越"],
+
+  "avertissement": "警告",
+  "aucun_semestre_selectionne": "未选择任何学期，请至少选择一个学期。",
+  "choisir_semestre": "选择一个学期",
+  "selectionner_semestre_exporter": "选择要导出的学期"
+}

@@ -1,0 +1,72 @@
+{
+  "nom_langue": "日本語",
+  "delegue_master": "Délégué Master",
+  "eleves": "学生",
+  "eleve": "学生",
+  "conseils": "クラス会議",
+
+  "fichier": "ファイル",
+  "nouveau": "新規",
+  "ouvrir": "開く",
+  "enregistrer": "保存",
+  "enregistrer_sous": "名前を付けて保存",
+  "importer": "インポート",
+  "importer_texte": "テキストからインポート",
+  "importer_csv": "CSVからインポート",
+  "importer_txt": "TXTからインポート",
+  "exporter": "エクスポート",
+  "exporter_pdf": "PDFにエクスポート",
+  "exporter_csv": "CSVにエクスポート",
+  "exporter_txt": "TXTにエクスポート",
+  "parametres": "設定",
+  "quitter": "終了",
+
+  "edition": "編集",
+
+  "ajouter_eleve": "学生を追加",
+  "supprimer_eleve": "学生を削除",
+
+  "nom": "名",
+  "prenom": "姓",
+
+  "rechercher": "検索...",
+  "ok": "OK",
+
+  "semestre_1": "第1学期",
+  "semestre_2": "第2学期",
+
+  "remarque": "備考",
+  "moyenne": "平均",
+  "appreciation": "評価",
+  "mention": "メンション",
+
+  "generale": "全般",
+  "note_max": "最高得点",
+  "nettoyer_cache": "キャッシュのクリア",
+  "nettoyer_cache_bouton": "クリア",
+  "langues": "言語",
+  "themes": "テーマ",
+
+  "sombre": "ダーク",
+
+  "importer_texte_titre": "テキストからインポート",
+  "importer_texte_bouton": "テキストをインポート",
+
+  "confirmer": "確認",
+  "message_confirmation_suppression": "現在のデータを削除して新しいプロジェクトを開きますか？",
+
+  "succes": "成功",
+  "donnes_importees": "データが次の場所から正常に開かれました：",
+  "donnes_exportees": "データが次の場所にエクスポートされました：",
+  "erreur": "エラー",
+  "message_erreur": "エラーが発生しました：",
+
+  "message_pdf": "PDFファイルが正常にエクスポートされました：",
+
+  "appreciations": ["評価なし", "懸念すべきバランス", "作業の警告", "行動の警告", "励まし", "賞賛", "おめでとう", "優秀"],
+
+  "avertissement": "警告",
+  "aucun_semestre_selectionne": "セメスターが選択されていません。少なくとも1つのセメスターを選択してください。",
+  "choisir_semestre": "セメスターを選択",
+  "selectionner_semestre_exporter": "エクスポートするセメスターを選択"
+}

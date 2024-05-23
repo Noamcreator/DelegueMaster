@@ -1,0 +1,72 @@
+{
+  "nom_langue": "Deutsch",
+  "delegue_master": "Délégué Master",
+  "eleves": "Schüler",
+  "eleve": "Schüler",
+  "conseils": "Klassenräte",
+
+  "fichier": "Datei",
+  "nouveau": "Neu",
+  "ouvrir": "Öffnen",
+  "enregistrer": "Speichern",
+  "enregistrer_sous": "Speichern unter",
+  "importer": "Importieren",
+  "importer_texte": "Aus Text importieren",
+  "importer_csv": "Aus CSV importieren",
+  "importer_txt": "Aus TXT importieren",
+  "exporter": "Exportieren",
+  "exporter_pdf": "Als PDF exportieren",
+  "exporter_csv": "Als CSV exportieren",
+  "exporter_txt": "Als TXT exportieren",
+  "parametres": "Einstellungen",
+  "quitter": "Beenden",
+
+  "edition": "Bearbeiten",
+
+  "ajouter_eleve": "Schüler hinzufügen",
+  "supprimer_eleve": "Schüler löschen",
+
+  "nom": "Nachname",
+  "prenom": "Vorname",
+
+  "rechercher": "Suchen...",
+  "ok": "OK",
+
+  "semestre_1": "1. Semester",
+  "semestre_2": "2. Semester",
+
+  "remarque": "Anmerkung",
+  "moyenne": "Durchschnitt",
+  "appreciation": "Wertschätzung",
+  "mention": "Erwähnung",
+
+  "generale": "Allgemein",
+  "note_max": "Maximalnote",
+  "nettoyer_cache": "Cache löschen",
+  "nettoyer_cache_bouton": "Löschen",
+  "langues": "Sprachen",
+  "themes": "Themen",
+
+  "sombre": "Dunkel",
+
+  "importer_texte_titre": "Aus Text importieren",
+  "importer_texte_bouton": "Text importieren",
+
+  "confirmer": "Bestätigung",
+  "message_confirmation_suppression": "Möchten Sie die aktuellen Daten löschen und ein neues Projekt öffnen?",
+
+  "succes": "Erfolg",
+  "donnes_importees": "Daten erfolgreich geöffnet von: ",
+  "donnes_exportees": "Daten exportiert nach: ",
+  "erreur": "Fehler",
+  "message_erreur": "Ein Fehler ist aufgetreten: ",
+
+  "message_pdf": "PDF-Datei erfolgreich exportiert: ",
+
+  "appreciations": ["Keine Wertschätzung", "Besorgniserregende Bilanz", "Warnung für die Arbeit", "Warnung für das Verhalten", "Ermutigungen", "Komplimente", "Glückwünsche", "Exzellenz"],
+
+  "avertissement": "Warnung",
+  "aucun_semestre_selectionne": "Kein Semester ausgewählt, bitte wählen Sie mindestens ein Semester aus.",
+  "choisir_semestre": "Wählen Sie ein Semester aus",
+  "selectionner_semestre_exporter": "Wählen Sie ein Semester zum Exportieren aus"
+}

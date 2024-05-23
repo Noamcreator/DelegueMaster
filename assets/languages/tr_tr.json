@@ -1,0 +1,72 @@
+{
+  "nom_langue": "Türkçe",
+  "delegue_master": "Délégué Master",
+  "eleves": "Öğrenciler",
+  "eleve": "Öğrenci",
+  "conseils": "Sınıf Danışmanlığı",
+
+  "fichier": "Dosya",
+  "nouveau": "Yeni",
+  "ouvrir": "Aç",
+  "enregistrer": "Kaydet",
+  "enregistrer_sous": "Farklı Kaydet",
+  "importer": "İçe Aktar",
+  "importer_texte": "METİN İçe Aktar",
+  "importer_csv": "CSV'den İçe Aktar",
+  "importer_txt": "TXT'den İçe Aktar",
+  "exporter": "Dışa Aktar",
+  "exporter_pdf": "PDF'e Dışa Aktar",
+  "exporter_csv": "CSV'ye Dışa Aktar",
+  "exporter_txt": "TXT'ye Dışa Aktar",
+  "parametres": "Ayarlar",
+  "quitter": "Çıkış",
+
+  "edition": "Düzenleme",
+
+  "ajouter_eleve": "Öğrenci Ekle",
+  "supprimer_eleve": "Öğrenci Sil",
+
+  "nom": "Ad",
+  "prenom": "Soyad",
+
+  "rechercher": "Ara...",
+  "ok": "Tamam",
+
+  "semestre_1": "1. Dönem",
+  "semestre_2": "2. Dönem",
+
+  "remarque": "Not",
+  "moyenne": "Ortalama",
+  "appreciation": "Takdir",
+  "mention": "Derece",
+
+  "generale": "Genel",
+  "note_max": "Maksimum Not",
+  "nettoyer_cache": "Önbelleği Temizle",
+  "nettoyer_cache_bouton": "Temizle",
+  "langues": "Diller",
+  "themes": "Temalar",
+
+  "sombre": "Koyu",
+
+  "importer_texte_titre": "Metinden İçe Aktar",
+  "importer_texte_bouton": "Metni İçe Aktar",
+
+  "confirmer": "Onayla",
+  "message_confirmation_suppression": "Mevcut verileri silip yeni bir proje açmak istediğinizden emin misiniz?",
+
+  "succes": "Başarı",
+  "donnes_importees": "Veriler başarıyla içe aktarıldı: ",
+  "donnes_exportees": "Veriler başarıyla dışa aktarıldı: ",
+  "erreur": "Hata",
+  "message_erreur": "Bir hata oluştu: ",
+
+  "message_pdf": "PDF dosyası başarıyla dışa aktarıldı: ",
+
+  "appreciations": ["Hiçbir takdir yok", "Endişe Verici Durum", "Çalışma Uyarısı", "Davranış Uyarısı", "Teşvik", "Övgü", "Tebrikler", "Üstün Başarı"],
+
+  "avertissement": "Uyarı",
+  "aucun_semestre_selectionne": "Hiçbir dönem seçilmedi, lütfen en az bir dönem seçin.",
+  "choisir_semestre": "Dönem Seç",
+  "selectionner_semestre_exporter": "Dışa Aktarılacak Bir Dönem Seçin"
+}

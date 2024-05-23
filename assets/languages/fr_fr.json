@@ -1,0 +1,75 @@
+{
+  "nom_langue": "Français",
+  "delegue_master": "Délégué Master",
+  "eleves": "Élèves",
+  "eleve": "Élève",
+  "conseils": "Conseils de Classe",
+
+  "fichier": "Fichier",
+  "nouveau": "Nouveau",
+  "ouvrir": "Ouvrir",
+  "enregistrer": "Enregistrer",
+  "enregistrer_sous": "Enregistrer sous",
+  "importer": "Importer",
+  "importer_texte": "Importer TEXTE",
+  "importer_csv": "Importer depuis un CSV",
+  "importer_txt": "Importer depuis un TXT",
+  "exporter": "Exporter",
+  "exporter_pdf": "Exporter en PDF",
+  "exporter_csv": "Exporter en CSV",
+  "exporter_txt": "Exporter en TXT",
+  "parametres": "Paramètres",
+  "quitter": "Quitter",
+
+  "edition": "Edition",
+
+  "ajouter_eleve": "Ajouter un Élève",
+  "supprimer_eleve": "Supprimer un Élève",
+
+  "nom": "Nom",
+  "prenom": "Prénom",
+  "date_de_naissance": "Date de naissance",
+  "sexe": "Sexe",
+
+  "rechercher": "Rechercher...",
+  "ok": "OK",
+
+  "semestre_1": "1er Semestre",
+  "semestre_2": "2nd Semestre",
+
+  "remarque": "Remarque",
+  "moyenne": "Moyenne",
+  "appreciation": "Appréciation",
+  "mention": "Mention",
+
+  "generale": "Générale",
+  "note_max": "Note maximum",
+  "classe": "Classe",
+  "nettoyer_cache": "Nettoyer le cache",
+  "nettoyer_cache_bouton": "Nettoyer",
+  "langues": "Langues",
+  "themes": "Thèmes",
+
+  "sombre": "Sombre",
+
+  "importer_texte_titre": "Importer depuis Texte",
+  "importer_texte_bouton": "Importer le Texte",
+
+  "confirmer": "Confirmation",
+  "message_confirmation_suppression": "Voulez-vous supprimer les données actuelles et ouvrir un nouveau projet ?",
+
+  "succes": "Succès",
+  "donnes_importees": "Données ouvertes avec succès à partir de: ",
+  "donnes_exportees": "Données exportées vers: ",
+  "erreur": "Erreur",
+  "message_erreur": "Une erreur s'est produite: ",
+
+  "message_pdf": "Fichier PDF exporté avec succès: ",
+
+  "appreciations": ["Aucune appréciation", "Bilan Inquiétant", "Mise en garde pour le travail", "Mise en garde pour la conduite", "Encouragements", "Compliments", "Félicitations", "Excellence"],
+
+  "avertissement": "Avertissement",
+  "aucun_semestre_selectionne": "Aucun semestre sélectionné, veuillez sélectionner au moins un semestre.",
+  "choisir_semestre": "Choisir un semestre",
+  "selectionner_semestre_exporter": "Selectionner un semestre à exporter"
+}

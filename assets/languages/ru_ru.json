@@ -1,0 +1,72 @@
+{
+  "nom_langue": "Русский",
+  "delegue_master": "Délégué Master",
+  "eleves": "Студенты",
+  "eleve": "Студент",
+  "conseils": "Классные советы",
+
+  "fichier": "Файл",
+  "nouveau": "Новый",
+  "ouvrir": "Открыть",
+  "enregistrer": "Сохранить",
+  "enregistrer_sous": "Сохранить как",
+  "importer": "Импорт",
+  "importer_texte": "Импорт из текста",
+  "importer_csv": "Импорт из CSV",
+  "importer_txt": "Импорт из TXT",
+  "exporter": "Экспорт",
+  "exporter_pdf": "Экспорт в PDF",
+  "exporter_csv": "Экспорт в CSV",
+  "exporter_txt": "Экспорт в TXT",
+  "parametres": "Настройки",
+  "quitter": "Выйти",
+
+  "edition": "Редактирование",
+
+  "ajouter_eleve": "Добавить студента",
+  "supprimer_eleve": "Удалить студента",
+
+  "nom": "Фамилия",
+  "prenom": "Имя",
+
+  "rechercher": "Поиск...",
+  "ok": "OK",
+
+  "semestre_1": "1-й семестр",
+  "semestre_2": "2-й семестр",
+
+  "remarque": "Примечание",
+  "moyenne": "Средний балл",
+  "appreciation": "Оценка",
+  "mention": "Упоминание",
+
+  "generale": "Общее",
+  "note_max": "Максимальная оценка",
+  "nettoyer_cache": "Очистить кэш",
+  "nettoyer_cache_bouton": "Очистить",
+  "langues": "Языки",
+  "themes": "Темы",
+
+  "sombre": "Тёмный",
+
+  "importer_texte_titre": "Импорт из текста",
+  "importer_texte_bouton": "Импортировать текст",
+
+  "confirmer": "Подтвердить",
+  "message_confirmation_suppression": "Хотите удалить текущие данные и открыть новый проект?",
+
+  "succes": "Успех",
+  "donnes_importees": "Данные успешно открыты из: ",
+  "donnes_exportees": "Данные экспортированы в: ",
+  "erreur": "Ошибка",
+  "message_erreur": "Произошла ошибка: ",
+
+  "message_pdf": "PDF файл успешно экспортирован: ",
+
+  "appreciations": ["Нет оценки", "Беспокоящий баланс", "Предупреждение о работе", "Предупреждение о поведении", "Поощрения", "Комплименты", "Поздравления", "Превосходство"],
+
+  "avertissement": "Предупреждение",
+  "aucun_semestre_selectionne": "Не выбран ни один семестр, выберите хотя бы один семестр.",
+  "choisir_semestre": "Выберите семестр",
+  "selectionner_semestre_exporter": "Выберите семестр для экспорта"
+}

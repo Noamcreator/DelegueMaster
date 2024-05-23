@@ -1,0 +1,72 @@
+{
+  "nom_langue": "Nederlands",
+  "delegue_master": "Délégué Master",
+  "eleves": "Studenten",
+  "eleve": "Student",
+  "conseils": "Klassenadviezen",
+
+  "fichier": "Bestand",
+  "nouveau": "Nieuw",
+  "ouvrir": "Openen",
+  "enregistrer": "Opslaan",
+  "enregistrer_sous": "Opslaan als",
+  "importer": "Importeren",
+  "importer_texte": "Importeren van tekst",
+  "importer_csv": "Importeren van CSV",
+  "importer_txt": "Importeren van TXT",
+  "exporter": "Exporteren",
+  "exporter_pdf": "Exporteren naar PDF",
+  "exporter_csv": "Exporteren naar CSV",
+  "exporter_txt": "Exporteren naar TXT",
+  "parametres": "Instellingen",
+  "quitter": "Afsluiten",
+
+  "edition": "Bewerken",
+
+  "ajouter_eleve": "Student toevoegen",
+  "supprimer_eleve": "Student verwijderen",
+
+  "nom": "Achternaam",
+  "prenom": "Voornaam",
+
+  "rechercher": "Zoeken...",
+  "ok": "OK",
+
+  "semestre_1": "1e Semester",
+  "semestre_2": "2e Semester",
+
+  "remarque": "Opmerking",
+  "moyenne": "Gemiddelde",
+  "appreciation": "Waardering",
+  "mention": "Vermelding",
+
+  "generale": "Algemeen",
+  "note_max": "Maximale score",
+  "nettoyer_cache": "Cache opschonen",
+  "nettoyer_cache_bouton": "Opschonen",
+  "langues": "Talen",
+  "themes": "Thema's",
+
+  "sombre": "Donker",
+
+  "importer_texte_titre": "Importeren van tekst",
+  "importer_texte_bouton": "Tekst importeren",
+
+  "confirmer": "Bevestigen",
+  "message_confirmation_suppression": "Wil je de huidige gegevens verwijderen en een nieuw project openen?",
+
+  "succes": "Succes",
+  "donnes_importees": "Gegevens succesvol geopend vanaf: ",
+  "donnes_exportees": "Gegevens geëxporteerd naar: ",
+  "erreur": "Fout",
+  "message_erreur": "Er is een fout opgetreden: ",
+
+  "message_pdf": "PDF-bestand succesvol geëxporteerd naar: ",
+
+  "appreciations": ["Geen waardering", "Verontrustende balans", "Waarschuwing voor werk", "Waarschuwing voor gedrag", "Aanmoedigingen", "Complimenten", "Gefeliciteerd", "Uitmuntendheid"],
+
+  "avertissement": "Waarschuwing",
+  "aucun_semestre_selectionne": "Geen semester geselecteerd, selecteer ten minste een semester.",
+  "choisir_semestre": "Kies een semester",
+  "selectionner_semestre_exporter": "Selecteer een semester om te exporteren"
+}

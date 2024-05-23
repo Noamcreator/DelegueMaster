@@ -1,0 +1,72 @@
+{
+  "nom_langue": "العربية",
+  "delegue_master": "مندوب رئيسي",
+  "eleves": "الطلاب",
+  "eleve": "طالب",
+  "conseils": "مشورة الصف",
+
+  "fichier": "ملف",
+  "nouveau": "جديد",
+  "ouvrir": "فتح",
+  "enregistrer": "حفظ",
+  "enregistrer_sous": "حفظ كـ",
+  "importer": "استيراد",
+  "importer_texte": "استيراد النص",
+  "importer_csv": "استيراد من CSV",
+  "importer_txt": "استيراد من TXT",
+  "exporter": "تصدير",
+  "exporter_pdf": "تصدير إلى PDF",
+  "exporter_csv": "تصدير إلى CSV",
+  "exporter_txt": "تصدير إلى TXT",
+  "parametres": "الإعدادات",
+  "quitter": "الخروج",
+
+  "edition": "تحرير",
+
+  "ajouter_eleve": "إضافة طالب",
+  "supprimer_eleve": "حذف طالب",
+
+  "nom": "الاسم",
+  "prenom": "اللقب",
+
+  "rechercher": "البحث...",
+  "ok": "موافق",
+
+  "semestre_1": "الفصل الدراسي الأول",
+  "semestre_2": "الفصل الدراسي الثاني",
+
+  "remarque": "ملاحظة",
+  "moyenne": "متوسط",
+  "appreciation": "تقدير",
+  "mention": "إشارة",
+
+  "generale": "عامة",
+  "note_max": "أقصى درجة",
+  "nettoyer_cache": "مسح الذاكرة المؤقتة",
+  "nettoyer_cache_bouton": "مسح",
+  "langues": "اللغات",
+  "themes": "السمات",
+
+  "sombre": "داكن",
+
+  "importer_texte_titre": "استيراد من النص",
+  "importer_texte_bouton": "استيراد النص",
+
+  "confirmer": "تأكيد",
+  "message_confirmation_suppression": "هل أنت متأكد من أنك تريد حذف البيانات الحالية وفتح مشروع جديد؟",
+
+  "succes": "نجاح",
+  "donnes_importees": "تم فتح البيانات بنجاح من: ",
+  "donnes_exportees": "تم تصدير البيانات إلى: ",
+  "erreur": "خطأ",
+  "message_erreur": "حدث خطأ: ",
+
+  "message_pdf": "تم تصدير ملف PDF بنجاح: ",
+
+  "appreciations": ["لا يوجد تقدير", "تحذير بالتقييم", "تحذير بالعمل", "تحذير بالسلوك", "تشجيع", "إشادة", "تهاني", "تميز"],
+
+  "avertissement": "تحذير",
+  "aucun_semestre_selectionne": "لم يتم تحديد أي فصل دراسي، يرجى تحديد على الأقل فصل دراسي واحد.",
+  "choisir_semestre": "اختيار فصل دراسي",
+  "selectionner_semestre_exporter": "تحديد فصل دراسي للتصدير"
+}

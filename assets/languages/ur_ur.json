@@ -1,0 +1,72 @@
+{
+  "nom_langue": "हिंदी-उर्दू",
+  "delegue_master": "डेलीगेट मास्टर",
+  "eleves": "छात्र",
+  "eleve": "छात्र",
+  "conseils": "कक्षा की सलाह",
+
+  "fichier": "फ़ाइल",
+  "nouveau": "नया",
+  "ouvrir": "खोलें",
+  "enregistrer": "सहेजें",
+  "enregistrer_sous": "नई फ़ाइल में सहेजें",
+  "importer": "आयात करें",
+  "importer_texte": "टेक्स्ट आयात करें",
+  "importer_csv": "CSV से आयात करें",
+  "importer_txt": "TXT से आयात करें",
+  "exporter": "निर्यात करें",
+  "exporter_pdf": "PDF में निर्यात करें",
+  "exporter_csv": "CSV में निर्यात करें",
+  "exporter_txt": "TXT में निर्यात करें",
+  "parametres": "सेटिंग्स",
+  "quitter": "बाहर निकलें",
+
+  "edition": "संपादन",
+
+  "ajouter_eleve": "छात्र जोड़ें",
+  "supprimer_eleve": "छात्र हटाएं",
+
+  "nom": "नाम",
+  "prenom": "पहचान",
+
+  "rechercher": "खोजें...",
+  "ok": "ठीक है",
+
+  "semestre_1": "1 वां सेमेस्टर",
+  "semestre_2": "2 वां सेमेस्टर",
+
+  "remarque": "टिप्पणी",
+  "moyenne": "औसत",
+  "appreciation": "सराहना",
+  "mention": "उल्लेख",
+
+  "generale": "सामान्य",
+  "note_max": "अधिकतम अंक",
+  "nettoyer_cache": "कैश साफ़ करें",
+  "nettoyer_cache_bouton": "साफ़ करें",
+  "langues": "भाषाएँ",
+  "themes": "थीम्स",
+
+  "sombre": "अंधेरा",
+
+  "importer_texte_titre": "टेक्स्ट से आयात करें",
+  "importer_texte_bouton": "टेक्स्ट आयात करें",
+
+  "confirmer": "पुष्टि",
+  "message_confirmation_suppression": "क्या आप वर्तमान डेटा को हटाकर एक नया परियोजना खोलना चाहते हैं?",
+
+  "succes": "सफलता",
+  "donnes_importees": "डेटा सफलतापूर्वक खोला गया है: ",
+  "donnes_exportees": "डेटा निर्यात किया गया है: ",
+  "erreur": "त्रुटि",
+  "message_erreur": "त्रुटि हुई: ",
+
+  "message_pdf": "PDF फ़ाइल सफलतापूर्वक निर्यात की गई: ",
+
+  "appreciations": ["कोई सराहना नहीं", "चिंता का मुद्दा", "काम के लिए चेतावनी", "आचरण के लिए चेतावनी", "प्रोत्साहन", "प्रशंसा", "बधाई", "उत्कृष्टता"],
+
+  "avertissement": "चेतावनी",
+  "aucun_semestre_selectionne": "कोई सेमेस्टर चयनित नहीं है, कृपया कम से कम एक सेमेस्टर चुनें।",
+  "choisir_semestre": "सेमेस्टर चुनें",
+  "selectionner_semestre_exporter": "निर्यात करने के लिए एक सेमेस्टर चुनें"
+}

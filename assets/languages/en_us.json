@@ -1,0 +1,72 @@
+{
+  "nom_langue": "English",
+  "delegue_master": "Délégué Master",
+  "eleves": "Students",
+  "eleve": "Student",
+  "conseils": "Class Councils",
+
+  "fichier": "File",
+  "nouveau": "New",
+  "ouvrir": "Open",
+  "enregistrer": "Save",
+  "enregistrer_sous": "Save As",
+  "importer": "Import",
+  "importer_texte": "Import from Text",
+  "importer_csv": "Import from CSV",
+  "importer_txt": "Import from TXT",
+  "exporter": "Export",
+  "exporter_pdf": "Export to PDF",
+  "exporter_csv": "Export to CSV",
+  "exporter_txt": "Export to TXT",
+  "parametres": "Settings",
+  "quitter": "Quit",
+
+  "edition": "Edit",
+
+  "ajouter_eleve": "Add a Student",
+  "supprimer_eleve": "Delete a Student",
+
+  "nom": "Last Name",
+  "prenom": "First Name",
+
+  "rechercher": "Search...",
+  "ok": "OK",
+
+  "semestre_1": "1st Semester",
+  "semestre_2": "2nd Semester",
+
+  "remarque": "Remark",
+  "moyenne": "Average",
+  "appreciation": "Appreciation",
+  "mention": "Mention",
+
+  "generale": "General",
+  "note_max": "Maximum Grade",
+  "nettoyer_cache": "Clear Cache",
+  "nettoyer_cache_bouton": "Clear",
+  "langues": "Languages",
+  "themes": "Themes",
+
+  "sombre": "Dark",
+
+  "importer_texte_titre": "Import from Text",
+  "importer_texte_bouton": "Import Text",
+
+  "confirmer": "Confirmation",
+  "message_confirmation_suppression": "Do you want to delete the current data and open a new project?",
+
+  "succes": "Success",
+  "donnes_importees": "Data successfully opened from: ",
+  "donnes_exportees": "Data exported to: ",
+  "erreur": "Error",
+  "message_erreur": "An error occurred: ",
+
+  "message_pdf": "PDF file exported successfully: ",
+
+  "appreciations": ["No appreciation", "Concerning Balance", "Warning for work", "Warning for behavior", "Encouragements", "Compliments", "Congratulations", "Excellence"],
+
+  "avertissement": "Warning",
+  "aucun_semestre_selectionne": "No semester selected, please select at least one semester.",
+  "choisir_semestre": "Choose a semester",
+  "selectionner_semestre_exporter": "Select a semester to export"
+}
