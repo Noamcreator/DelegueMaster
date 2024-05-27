@@ -20,6 +20,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from core.classe import Classe
 from database.db_handler import creer_db, ouvrir_db, sauvegarder_db
 from ui.import_eleves_dialog import ImportElevesDialog
+from utils.files_utils import get_assets_path
 
 from .settings_dialog import SettingsDialog
 
@@ -38,11 +39,6 @@ class MenuBar:
 
         # Récupération de la fonction de traduction
         tr = self.delegue_master.langues.tr
-
-        # Renseignement de la police de caractères pour l'export PDF
-        #script_dir = os.path.dirname(os.path.abspath(__file__).replace("code", ""))
-        #police = os.path.join(script_dir, 'ressources\\', 'Roboto-Regular.ttf')
-        #pdfmetrics.registerFont(TTFont('Roboto-Regular', police))
 
         # MENU FICHIER
         MenuBar.menu_fichier = menubar.addMenu(tr('fichier'))
@@ -276,6 +272,11 @@ class MenuBar:
                 dossier_pdf, _ = QFileDialog.getSaveFileName(self.delegue_master, tr('exporter_pdf'), tr('conseils'),
                                                              'PDF Files (*.pdf)')
                 if dossier_pdf:
+                    
+                    # Renseignement de la police de caractères pour l'export PDF
+                    police = get_assets_path("Roboto-Regular.ttf")
+                    pdfmetrics.registerFont(TTFont('Roboto-Regular', police))
+                    
                     # Création d'un document PDF avec encodage UTF-8 et la police Plex Mono
                     doc = SimpleDocTemplate(dossier_pdf, pagesize=letter, encoding='utf-8')
 
@@ -287,69 +288,27 @@ class MenuBar:
                     # Contenu du document PDF
                     elements = []
 
-                    # Connexion à la base de données
-                    conn = sqlite3.connect(self.delegue_master.db_temp_file)
-                    cursor = conn.cursor()
-
-                    # Récupération des données des élèves en fonction des choix de l'utilisateur
-                    cursor.execute(
-                        "SELECT e.nom, e.prenom, s1.remarques, s1.moyennes, s1.mentions, s2.remarques, s2.moyennes, s2.mentions FROM eleves e JOIN semestre1 s1 ON e.idEleves = s1.idEleves JOIN semestre2 s2 ON e.idEleves = s2.idEleves")
-
-                    eleves = cursor.fetchall()
+                    eleves = self.delegue_master.getClasse().get_eleves()
 
                     # Style du tableau
                     table_style = TableStyle([('GRID', (0, 0), (-1, -1), 1, colors.black)])
 
                     for eleve in eleves:
                         # Création du tableau pour chaque élève
-
-                        if semestre1_selected and semestre2_selected:
-                            data = [
-                                [Paragraph('<b>' + eleve[0] + ' ' + eleve[1] + '</b>', bold_style),
-                                 Paragraph(tr('remarque'), styles['Normal']),
-                                 Paragraph(tr('moyenne'), styles['Normal']),
-                                 Paragraph(tr('mention'), styles['Normal'])],
-
-                                [Paragraph(tr('semestre_1'), styles['Normal']),
-                                 Paragraph(eleve[2] if eleve[2] else "", styles['Normal']),
-                                 Paragraph(str(eleve[3]) if eleve[3] is not None else "0.0", styles['Normal']),
-                                 Paragraph(tr('appreciations')[eleve[4]] if eleve[4] else tr('appreciations')[0],
-                                           styles['Normal'])],
-
-                                [Paragraph(tr('semestre_2'), styles['Normal']),
-                                 Paragraph(eleve[5] if eleve[5] else "", styles['Normal']),
-                                 Paragraph(str(eleve[6]) if eleve[6] else "0.0", styles['Normal']),
-                                 Paragraph(tr('appreciations')[eleve[7]] if eleve[7] else tr('appreciations')[0],
-                                           styles['Normal'])]
-                            ]
-
-                        elif semestre1_selected:
-                            data = [
-                                [Paragraph('<b>' + eleve[0] + ' ' + eleve[1] + '</b>', bold_style),
-                                 Paragraph(tr('remarque'), styles['Normal']),
-                                 Paragraph(tr('moyenne'), styles['Normal']),
-                                 Paragraph(tr('mention'), styles['Normal'])],
-
-                                [Paragraph(tr('semestre_1'), styles['Normal']),
-                                 Paragraph(eleve[2] if eleve[2] else "", styles['Normal']),
-                                 Paragraph(str(eleve[3]) if eleve[3] is not None else "0.0", styles['Normal']),
-                                 Paragraph(tr('appreciations')[eleve[4]] if eleve[4] else tr('appreciations')[0],
-                                           styles['Normal'])]
-                            ]
-
-                        else:
-                            data = [
-                                [Paragraph('<b>' + eleve[0] + ' ' + eleve[1] + '</b>', bold_style),
-                                 Paragraph(tr('remarque'), styles['Normal']),
-                                 Paragraph(tr('moyenne'), styles['Normal']),
-                                 Paragraph(tr('mention'), styles['Normal'])],
-
-                                [Paragraph(tr('semestre_2'), styles['Normal']),
-                                 Paragraph(eleve[5] if eleve[5] else "", styles['Normal']),
-                                 Paragraph(str(eleve[6]) if eleve[6] else "0.0", styles['Normal']),
-                                 Paragraph(tr('appreciations')[eleve[7]] if eleve[7] else tr('appreciations')[0],
-                                           styles['Normal'])]
-                            ]
+                        data = [
+                            [Paragraph('<b>' + eleve.get_nom_complet() + '</b>', bold_style),
+                            Paragraph(tr('remarque'), styles['Normal']),
+                            Paragraph(tr('moyenne'), styles['Normal']),
+                            Paragraph(tr('mention'), styles['Normal'])]
+                        ]
+                
+                        for periode in eleve.get_periodes():
+                            data.append([
+                                Paragraph(tr('semestre_1'), styles['Normal']),
+                                Paragraph(periode.get_remarque() if periode.get_remarque() else "", styles['Normal']),
+                                Paragraph(str(periode.get_moyenne() if periode.get_moyenne() is not None else "0.0"), styles['Normal']),
+                                Paragraph(tr('appreciations')[periode.get_appreciation()] if periode.get_appreciation() else tr('appreciations')[0], styles['Normal'])
+                            ])
 
                         # Création du tableau
                         table = Table(data)
@@ -360,9 +319,6 @@ class MenuBar:
 
                         # Ajout d'un espace entre chaque élève
                         elements.append(Spacer(1, 12))
-
-                    # Fermeture de la connexion à la base de données
-                    conn.close()
 
                     # Génération du PDF
                     doc.build(elements)

@@ -4,7 +4,6 @@ class Classe:
         self.nb_periodes = 2 # Nombre de périodes par défaut (Semestre 1 et 2)
         self.remarque = ''
         self.moyenne = 0.0
-        self.appreciation = 0
         self.eleves = []
     
     def ajouter_eleve(self, eleve):
@@ -45,9 +44,3 @@ class Classe:
     
     def get_moyenne(self):
         return self.moyenne
-    
-    def set_appreciation(self, appreciation):
-        self.appreciation = appreciation
-    
-    def get_appreciation(self):
-        return self.appreciation

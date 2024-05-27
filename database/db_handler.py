@@ -11,8 +11,7 @@ def creer_db(path):
             nom TEXT,
             nombre_de_periodes INTEGER,
             remarque TEXT,
-            moyenne REAL,
-            appreciation INTEGER
+            moyenne REAL
         )
     ''')
     cursor.execute('''
@@ -41,9 +40,9 @@ def sauvegarder_db(path, classe):
     conn = sqlite3.connect(path)
     cursor = conn.cursor()
     cursor.execute('''
-            INSERT INTO classe (nom, nombre_de_periodes, remarque, moyenne, appreciation)
-            VALUES (?, ?, ?, ?, ?)
-            ''', (classe.get_nom(), classe.get_nb_periodes(), classe.get_remarque(), classe.get_moyenne(), classe.get_appreciation()))
+            INSERT INTO classe (nom, nombre_de_periodes, remarque, moyenne)
+            VALUES (?, ?, ?, ?)
+            ''', (classe.get_nom(), classe.get_nb_periodes(), classe.get_remarque(), classe.get_moyenne()))
     
     for index_eleve in range(len(classe.get_eleves())):
         eleve = classe.get_eleve(index_eleve)
@@ -73,7 +72,6 @@ def ouvrir_db(path):
         classe.set_nb_periodes(classe_info[1])
         classe.set_remarque(classe_info[2])
         classe.set_moyenne(classe_info[3])
-        classe.set_appreciation(classe_info[4])
     
     # Charger les informations des élèves
     cursor.execute('SELECT * FROM eleves')

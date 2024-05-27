@@ -22,8 +22,6 @@ def importer_xlsx(delegue_master, file_path):
     classes_dispo = QComboBox()
     classes_dispo.setEditable(True)  # Permettre la recherche
     classes_dispo.addItems(classes_disponibles)
-    if(delegue_master.profile.classe != ""):
-        classes_dispo.lineEdit().setText(delegue_master.profile.classe)
     classes_dispo.lineEdit().setPlaceholderText("Rechercher une classe...")
     dialog_layout.addWidget(classes_dispo)
         
