@@ -1,31 +1,19 @@
 # Importation des modules nécessaires
-import csv  # Module pour la manipulation de fichiers CSV
 import os  # Module pour les opérations sur le système d'exploitation
-import shutil  # Module pour la manipulation de fichiers et de répertoires
-import sqlite3  # Module pour l'interaction avec les bases de données SQLite
 
 # Importations PyQt6 pour l'interface graphique
 from PySide6.QtGui import QAction, QIcon
-from PySide6.QtWidgets import QMessageBox, QFileDialog, QTextEdit, QPushButton, QVBoxLayout, QDialog, QTableWidgetItem, \
-    QCheckBox, QLabel
+from PySide6.QtWidgets import QMessageBox, QFileDialog, QTextEdit, QPushButton, QVBoxLayout, QDialog, QCheckBox, QLabel
 # Importation de la fonction pour appliquer un thème à l'interface
 from qt_material import apply_stylesheet
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import letter
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 
 from core.classe import Classe
-from database.db_handler import creer_db, ouvrir_db, sauvegarder_db
-from ui.import_eleves_dialog import ImportElevesDialog
-from utils.files_utils import get_assets_path
+from database.db_handler import ouvrir_db, sauvegarder_db
+from import_export.csv import exporter_csv, importer_csv
+from import_export.pdf import exporter_pdf
+from import_export.xlsx import importer_xlsx
 
 from .settings_dialog import SettingsDialog
-
-# Importation de la boîte de dialogue des paramètres
-
 
 # Classe de la barre de menu
 class MenuBar:
@@ -138,16 +126,14 @@ class MenuBar:
         MenuBar.menu_eleves = menubar.addMenu(tr('eleves'))
 
         # Action Ajouter Élève
-        MenuBar.ajouter_eleve = QAction(tr('ajouter_eleve'), delegue_master)
-        MenuBar.ajouter_eleve.setShortcut('Ctrl+E')
-        #MenuBar.ajouter_eleve.triggered.connect(delegue_master.recup_onglet_eleves().ajouter_eleve_dialog)
-        MenuBar.menu_eleves.addAction(MenuBar.ajouter_eleve)
+        self.ajouter_eleve = QAction(tr('ajouter_eleve'), delegue_master)
+        self.ajouter_eleve.setShortcut('Ctrl+E')
+        MenuBar.menu_eleves.addAction(self.ajouter_eleve)
 
         # Action Supprimer Élève
         self.supprimer_eleve = QAction(tr('supprimer_eleve'), delegue_master)
         self.supprimer_eleve.setShortcut('Del')
         self.supprimer_eleve.setEnabled(False)
-        #self.supprimer_eleve.triggered.connect(delegue_master.recup_onglet_eleves().supprimer_eleve)
         MenuBar.menu_eleves.addAction(self.supprimer_eleve)
 
     # Méthode appelée lors de l'action Nouveau
@@ -238,10 +224,6 @@ class MenuBar:
         # Obtient la traduction pour la langue sélectionnée
         tr = self.delegue_master.langues.tr
 
-        # Crée des cases à cocher pour les semestres
-        checkbox_semestre1 = QCheckBox(tr('semestre_1'), self.delegue_master)
-        checkbox_semestre2 = QCheckBox(tr('semestre_2'), self.delegue_master)
-
         # Crée une boîte de dialogue pour choisir les semestres à exporter en PDF
         dialog = QDialog(self.delegue_master)
         dialog.setWindowIcon(QIcon("logo.png"))  # Définit une icône pour la boîte de dialogue
@@ -250,88 +232,23 @@ class MenuBar:
 
         # Ajoute un label pour indiquer à l'utilisateur de sélectionner les semestres à exporter
         layout.addWidget(QLabel(tr('selectionner_semestre_exporter')))
-        # Ajoute les cases à cocher pour les semestres au layout
-        layout.addWidget(checkbox_semestre1)
-        layout.addWidget(checkbox_semestre2)
+        
+        checkboxs = []
+        nb_periodes = self.delegue_master.getClasse().get_nb_periodes()
+        for i in range(nb_periodes):
+            checkbox_periode = QCheckBox('Période ' + str(i+1), self.delegue_master)
+            checkboxs.append(checkbox_periode)
+            layout.addWidget(checkbox_periode)
 
         # Ajoute un bouton pour valider l'exportation du PDF
         bouton_valider = QPushButton(tr('exporter'), self.delegue_master)
         # Connecte le clic du bouton à la fonction d'exportation du PDF en utilisant les paramètres choisis
-        bouton_valider.clicked.connect(
-            lambda: self.exporter_fichier_pdf(tr, checkbox_semestre1.isChecked(), checkbox_semestre2.isChecked(),
-                                              dialog))
+        bouton_valider.clicked.connect(lambda: exporter_pdf(self.delegue_master, tr, checkboxs, dialog))
         layout.addWidget(bouton_valider)
 
         dialog.setLayout(layout)  # Applique le layout à la boîte de dialogue
         dialog.exec()  # Affiche la boîte de dialogue et attend que l'utilisateur interagisse avec
-
-    def exporter_fichier_pdf(self, tr, semestre1_selected, semestre2_selected, dialog):
-        if semestre1_selected or semestre2_selected:
-            try:
-                # Continuer avec l'exportation selon les choix de l'utilisateur
-                dossier_pdf, _ = QFileDialog.getSaveFileName(self.delegue_master, tr('exporter_pdf'), tr('conseils'),
-                                                             'PDF Files (*.pdf)')
-                if dossier_pdf:
-                    
-                    # Renseignement de la police de caractères pour l'export PDF
-                    police = get_assets_path("Roboto-Regular.ttf")
-                    pdfmetrics.registerFont(TTFont('Roboto-Regular', police))
-                    
-                    # Création d'un document PDF avec encodage UTF-8 et la police Plex Mono
-                    doc = SimpleDocTemplate(dossier_pdf, pagesize=letter, encoding='utf-8')
-
-                    # Style pour le texte en gras
-                    styles = getSampleStyleSheet()
-                    bold_style = styles['Normal']
-                    bold_style.fontName = 'Roboto-Regular'
-
-                    # Contenu du document PDF
-                    elements = []
-
-                    eleves = self.delegue_master.getClasse().get_eleves()
-
-                    # Style du tableau
-                    table_style = TableStyle([('GRID', (0, 0), (-1, -1), 1, colors.black)])
-
-                    for eleve in eleves:
-                        # Création du tableau pour chaque élève
-                        data = [
-                            [Paragraph('<b>' + eleve.get_nom_complet() + '</b>', bold_style),
-                            Paragraph(tr('remarque'), styles['Normal']),
-                            Paragraph(tr('moyenne'), styles['Normal']),
-                            Paragraph(tr('mention'), styles['Normal'])]
-                        ]
-                
-                        for periode in eleve.get_periodes():
-                            data.append([
-                                Paragraph(tr('semestre_1'), styles['Normal']),
-                                Paragraph(periode.get_remarque() if periode.get_remarque() else "", styles['Normal']),
-                                Paragraph(str(periode.get_moyenne() if periode.get_moyenne() is not None else "0.0"), styles['Normal']),
-                                Paragraph(tr('appreciations')[periode.get_appreciation()] if periode.get_appreciation() else tr('appreciations')[0], styles['Normal'])
-                            ])
-
-                        # Création du tableau
-                        table = Table(data)
-                        table.setStyle(table_style)
-
-                        # Ajout du tableau au contenu du PDF
-                        elements.append(table)
-
-                        # Ajout d'un espace entre chaque élève
-                        elements.append(Spacer(1, 12))
-
-                    # Génération du PDF
-                    doc.build(elements)
-
-                    QMessageBox.information(self.delegue_master, tr('succes'), tr('message_pdf') + dossier_pdf)
-
-                    dialog.close()
-            except Exception as e:
-                QMessageBox.critical(self.delegue_master, tr('erreur'), tr('message_erreur') + str(e))
-        else:
-            QMessageBox.warning(self.delegue_master, tr('avertissement'),
-                                tr('aucun_semestre_selectionne'))
-
+        
     def importer_texte_action(self):
         # Ouvre une fenêtre de dialogue avec un QTextEdit et un bouton d'importation
         dialog = QDialog()
@@ -372,59 +289,22 @@ class MenuBar:
 
     def importer_xlsx_action(self):
         #self.nouveau_action()
-        import_eleves_dialog = ImportElevesDialog(self.delegue_master)
-        import_eleves_dialog.show()
+        file_path, _ = QFileDialog.getOpenFileName(self.delegue_master, "Importer un fichier Excel", "", "Fichiers Excel (*.xlsx)")
+        if file_path:
+            importer_xlsx(self.delegue_master, file_path)
 
     def importer_csv_action(self):
         file_dialog = QFileDialog()
         tr = self.delegue_master.langues.tr
         nom_fichier, _ = file_dialog.getOpenFileName(self.delegue_master, tr('importer_csv'), '', 'CSV Files (*.csv)')
-        self.importer_csv(nom_fichier)
+        importer_csv(nom_fichier)
     
-    def importer_csv(self, nom_fichier):
-        if nom_fichier:
-            try:
-                with open(nom_fichier, newline='', encoding='utf-8') as csvfile:
-                    csvreader = csv.reader(csvfile, delimiter=';')
-                    self.delegue_master.recup_onglet_eleves().effacer_table()
-
-                    # Ignorer la première ligne (en-tête)
-                    next(csvreader)
-
-                    for row, data in enumerate(csvreader):
-                        self.delegue_master.recup_onglet_eleves().ajouter_eleve(data[0], data[1])
-
-                QMessageBox.information(self.delegue_master, tr('succes'),
-                                        tr('donnes_importees') + nom_fichier)
-            except Exception as e:
-                QMessageBox.critical(self.delegue_master, tr('erreur'),
-                                     tr('message_erreur') + str(e))
-
     def exporter_csv_action(self):
         fichier = QFileDialog()
         tr = self.delegue_master.langues.tr
         nom_fichier, _ = fichier.getSaveFileName(self.delegue_master, tr('exporter_csv'), '', 'CSV Files (*.csv)')
-        if nom_fichier:
-            try:
-                with open(nom_fichier, 'w', newline='', encoding='utf-8') as csvfile:
-                    csvwriter = csv.writer(csvfile, delimiter=';')
-                    # Ecrire la première ligne (en-tête)
-                    csvwriter.writerow(['NOMS', 'Prenoms'])
-                    for row in range(self.delegue_master.recup_onglet_eleves().recup_table().rowCount()):
-                        data = []
-                        for col in range(self.delegue_master.recup_onglet_eleves().recup_table().columnCount()):
-                            item = self.delegue_master.recup_onglet_eleves().recup_table().item(row, col)
-                            if item is not None:
-                                data.append(item.text())
-                            else:
-                                data.append('')
-                        csvwriter.writerow(data)
-
-                QMessageBox.information(self.delegue_master, tr('succes'),
-                                        tr('donnes_exportees') + nom_fichier)
-            except Exception as e:
-                QMessageBox.critical(self.delegue_master, tr('erreur'), tr('message_erreur') + str(e))
-
+        exporter_csv(nom_fichier)
+        
     def importer_txt_action(self):
         fichier = QFileDialog()
         tr = self.delegue_master.langues.tr

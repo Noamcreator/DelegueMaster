@@ -23,11 +23,11 @@ class DelegueMaster(QMainWindow):
         self.langues = Langues(self)
         self.themes = Themes(self)
         
-        # Création et configuration de la barre de menu
-        self.menuBar = MenuBar(self)
-        
         # Initialisation de la classe Classe des Elèves
         self.classe = Classe()
+        
+        # Création et configuration de la barre de menu
+        self.menuBar = MenuBar(self)
         
         # Onglets
         tabs = QTabWidget()

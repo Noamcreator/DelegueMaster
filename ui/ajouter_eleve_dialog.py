@@ -1,7 +1,4 @@
-import os
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QDialog, QGridLayout, QLabel, QComboBox, QTabWidget, QVBoxLayout, QWidget, QHBoxLayout, \
-    QCheckBox, QDoubleSpinBox, QPushButton, QLineEdit, QInputDialog
+from PySide6.QtWidgets import QDialog, QLabel, QComboBox, QVBoxLayout, QPushButton, QLineEdit
 
 from core.eleve import Eleve
 

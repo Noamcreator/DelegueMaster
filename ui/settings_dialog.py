@@ -1,8 +1,6 @@
-import os
-from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QDialog, QGridLayout, QLabel, QComboBox, QTabWidget, QVBoxLayout, QWidget, QHBoxLayout, \
-    QCheckBox, QDoubleSpinBox, QPushButton, QLineEdit, QInputDialog
-from qt_material import apply_stylesheet, QtStyleTools
+    QCheckBox, QDoubleSpinBox, QPushButton, QInputDialog
+from qt_material import apply_stylesheet
 
 
 class SettingsDialog(QDialog):
