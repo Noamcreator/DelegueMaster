@@ -1,8 +1,6 @@
-import os
-from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QDialog, QGridLayout, QLabel, QComboBox, QTabWidget, QVBoxLayout, QWidget, QHBoxLayout, \
-    QCheckBox, QDoubleSpinBox, QPushButton, QLineEdit, QInputDialog
-from qt_material import apply_stylesheet, QtStyleTools
+    QCheckBox, QDoubleSpinBox, QPushButton, QInputDialog
+from qt_material import apply_stylesheet
 
 
 class SettingsDialog(QDialog):
@@ -39,16 +37,7 @@ class SettingsDialog(QDialog):
         note_maximum.setValue(self.delegue_master.profile.note_max)
         note_maximum.valueChanged.connect(lambda value: self.changer_note_maximum(value))
         onglet_general_layout.addWidget(note_maximum, 0, 1)
-
-        # Classe
-        SettingsDialog.label_classe = QLabel(tr('classe') + ":")
-        onglet_general_layout.addWidget(SettingsDialog.label_classe, 1, 0)
-
-        # Zone de saisie pour la classe
-        classe = QLineEdit(self.delegue_master.profile.classe)
-        classe.textChanged.connect(lambda text: self.changer_classe(text))
-        onglet_general_layout.addWidget(classe, 1, 1)
-
+        
         # Onglet pour les appréciations
         onglet_appreciations = QWidget()
         onglet_appreciations_layout = QVBoxLayout()
@@ -123,12 +112,6 @@ class SettingsDialog(QDialog):
         self.delegue_master.profile.enregistrer_fichier()
         # Appel d'une méthode pour mettre à jour l'affichage des conseils
         self.delegue_master.recup_onglet_conseils().changer_note_maximum()
-
-    def changer_classe(self, classe):
-        # Mise à jour de la classe dans le profil
-        self.delegue_master.profile.classe = classe
-        # Enregistrement du profil mis à jour
-        self.delegue_master.profile.enregistrer_fichier()
 
     # Méthode pour nettoyer le cache
     # Méthode appelée lorsqu'une langue est sélectionnée

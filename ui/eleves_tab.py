@@ -32,11 +32,13 @@ class ElevesTab(QWidget):
         toolbar = QHBoxLayout()
         ElevesTab.ajouter_eleve_bouton = QPushButton(tr('ajouter_eleve'))
         ElevesTab.ajouter_eleve_bouton.clicked.connect(self.ajouter_eleve_action)
+        self.delegue_master.menuBar.ajouter_eleve.triggered.connect(self.ajouter_eleve_action)
         toolbar.addWidget(ElevesTab.ajouter_eleve_bouton)
 
         ElevesTab.supprimer_eleve_bouton = QPushButton(tr('supprimer_eleve'))
         ElevesTab.supprimer_eleve_bouton.clicked.connect(self.supprimer_eleve_action)
         ElevesTab.supprimer_eleve_bouton.setEnabled(False)
+        self.delegue_master.menuBar.supprimer_eleve.triggered.connect(self.supprimer_eleve_action)
         toolbar.addWidget(ElevesTab.supprimer_eleve_bouton)
         layout.addLayout(toolbar)
 

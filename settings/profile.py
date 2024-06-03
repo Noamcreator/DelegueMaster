@@ -8,7 +8,6 @@ class Profile:
         self.premier_demarage = False
         self.langue = 'fr_fr'  # Langue par défaut
         self.note_max = 20.0  # Note maximale par défaut
-        self.classe = ""  # Classe par défaut
         self.theme = 1  # Thème par défaut
         self.dark = False  # Mode sombre par défaut
         self.emplacement_ouvrir = ""  # Emplacement par défaut pour ouvrir les fichiers
@@ -37,7 +36,6 @@ class Profile:
                 profile = json.load(f)
                 self.langue = profile['langue']
                 self.note_max = float(profile['note_max'])
-                self.classe = profile['classe']
                 self.theme = int(profile['theme'])
                 self.dark = bool(profile['dark'])
                 self.emplacement_ouvrir = profile['emplacement_ouvrir']
@@ -51,7 +49,6 @@ class Profile:
             profile = {
                 "langue": self.langue,
                 "note_max": self.note_max,
-                "classe": self.classe,
                 "theme": self.theme,
                 "dark": self.dark,
                 "emplacement_ouvrir": self.emplacement_ouvrir,

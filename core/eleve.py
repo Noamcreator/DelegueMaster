@@ -42,8 +42,6 @@ class Eleve:
     def set_nb_periodes(self, nb_periodes):
         if nb_periodes == len(self.periodes):
             return
-        if nb_periodes < len(self.periodes):
-            del self.periodes[nb_periodes:]
         if nb_periodes > len(self.periodes):
             for i in range(nb_periodes - len(self.periodes)):
                 self.periodes.append(Periode())
