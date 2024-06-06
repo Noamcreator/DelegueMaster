@@ -26,7 +26,8 @@ class Langues:
 
     # Charger les données de la langue spécifiée depuis le fichier JSON correspondant
     def charger_langues(self, langue):
-        with open(f'{self.dossier_langues}' + f'\\{langue}.json', 'r', encoding='utf-8') as f:
+        file = os.path.join(self.dossier_langues, f'{langue}.json')
+        with open(file, 'r', encoding='utf-8') as f:
             self.langue_json = json.load(f)
 
     # Changer la langue de l'application en fonction de l'index sélectionné
@@ -61,7 +62,8 @@ class Langues:
     def recup_noms_langues(self):
         langues_noms = []
         for langue in self.langues:
-            with open(f'{self.dossier_langues}' + f'\\{langue}.json', 'r', encoding='utf-8') as f:
+            file = os.path.join(self.dossier_langues, f'{langue}.json')
+            with open(file, 'r', encoding='utf-8') as f:
                 langues_noms.append(json.load(f)['nom_langue'])
 
         return langues_noms

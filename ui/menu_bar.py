@@ -11,10 +11,7 @@ from core.classe import Classe
 from database.db_handler import ouvrir_db, sauvegarder_db
 from import_export.csv import exporter_csv, importer_csv
 from import_export.pdf import exporter_pdf
-<<<<<<< HEAD
 from import_export.txt import exporter_txt, importer_txt
-=======
->>>>>>> dc682bbcb658d6e2427319f7e6d1c93c16bddda1
 from import_export.xlsx import importer_xlsx
 
 from .settings_dialog import SettingsDialog
@@ -225,8 +222,7 @@ class MenuBar:
     def exporter_action(self):
         # Obtient la traduction pour la langue sélectionnée
         tr = self.delegue_master.langues.tr
-
-<<<<<<< HEAD
+        
         # Crée une boîte de dialogue pour choisir les semestres à exporter en PDF
         dialog = QDialog(self.delegue_master)
         dialog.setWindowIcon(QIcon("logo.png"))  # Définit une icône pour la boîte de dialogue
@@ -289,10 +285,8 @@ class MenuBar:
                             
     def exporter_pdf_action(self):
         # Obtient la traduction pour la langue sélectionnée
-        tr = self.delegue_master.langues.tr
-
-=======
->>>>>>> dc682bbcb658d6e2427319f7e6d1c93c16bddda1
+        tr = self.delegue_master.langues.tr  
+            
         # Crée une boîte de dialogue pour choisir les semestres à exporter en PDF
         dialog = QDialog(self.delegue_master)
         dialog.setWindowIcon(QIcon("logo.png"))  # Définit une icône pour la boîte de dialogue
@@ -312,10 +306,6 @@ class MenuBar:
         # Ajoute un bouton pour valider l'exportation du PDF
         bouton_valider = QPushButton(tr('exporter'), self.delegue_master)
         # Connecte le clic du bouton à la fonction d'exportation du PDF en utilisant les paramètres choisis
-<<<<<<< HEAD
-    
-=======
->>>>>>> dc682bbcb658d6e2427319f7e6d1c93c16bddda1
         bouton_valider.clicked.connect(lambda: exporter_pdf(self.delegue_master, tr, checkboxs, dialog))
         layout.addWidget(bouton_valider)
 
